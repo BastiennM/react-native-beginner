@@ -1,4 +1,4 @@
-import {Text, View, ViewStyle, Image, Dimensions} from 'react-native';
+import {View, ViewStyle, Image, Dimensions} from 'react-native';
 import * as React from 'react';
 import {useTheme} from '../providers/theme_provider';
 import homeImage from '../images/png/home.png';

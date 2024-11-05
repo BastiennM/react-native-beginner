@@ -1,23 +1,18 @@
-import {View, ViewStyle} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import * as React from 'react';
 import {useTheme} from '../providers/theme_provider';
-import CustomButton from '../components/button';
-import AddIconDark from '../images/svg/white/AddIcon.svg';
-import AddIconWhite from '../images/svg/dark/AddIcon.svg';
+import CustomButton from '../components/Button';
+import AddIconDark from '../images/svg/dark/AddIcon.svg';
+import AddIconWhite from '../images/svg/white/AddIcon.svg';
+import MovieCard from '../components/MovieCard';
+import MoviePoster from "../components/MoviePoster";
 
 function Wishlist() {
     const { theme} = useTheme();
-    const style: { container: ViewStyle } = {
-        container: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: theme.colors.background,
-        },
-    };
+    const styles = createStyles(theme);
 
     return (
-        <View style={style.container}>
+        <View style={styles.container}>
             <CustomButton
                 label="Label"
                 variant="primary"
@@ -29,9 +24,30 @@ function Wishlist() {
                 label="Label"
                 variant="secondary"
                 onPress={() => console.log('Primary button pressed')}
+                iconDark={<AddIconDark />}
+                iconLight={<AddIconWhite />}
+            />
+            <MovieCard
+                imageUrl="https://placeholderimage.eu/api"
+                movieName="Movie name"
+                rating={4.7}
+            />
+            <MoviePoster
+                imageUrl="https://placeholderimage.eu/api"
+                title="Movie title"
             />
         </View>
     );
 }
+
+const createStyles = (theme: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 16,
+        backgroundColor: theme.colors.background,
+    },
+});
 
 export default Wishlist;

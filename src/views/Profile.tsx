@@ -1,4 +1,4 @@
-import {Button, Text, View, ViewStyle} from 'react-native';
+import {Button, View, ViewStyle} from 'react-native';
 import * as React from 'react';
 import {useTheme} from '../providers/theme_provider';
 

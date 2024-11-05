@@ -8,6 +8,7 @@ interface CustomButtonProps {
     iconDark?: React.ReactNode;
     variant?: 'primary' | 'secondary';
     onPress: () => void;
+    needIcon?: boolean;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -16,6 +17,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
        iconDark,
        variant = 'primary',
        onPress,
+       needIcon = false,
    }) => {
     const { theme , isDark} = useTheme();
     const textColor = variant === 'primary'
@@ -33,7 +35,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
             ]}
             onPress={onPress}>
             <View style={styles.buttonContent}>
-                {icon && <View style={styles.iconContainer}>{icon}</View>}
+                {needIcon && icon && <View style={styles.iconContainer}>{icon}</View>}
                 <Text
                     style={[
                         styles.buttonText,
@@ -53,7 +55,8 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
-        minWidth: 120,
+        width: '100%',
+        height: 48,
     },
     buttonContent: {
         flexDirection: 'row',

@@ -3,7 +3,7 @@ import React, {createContext, useContext, useState, useMemo, ReactNode} from 're
 import {LightModeTheme, DarkModeTheme} from '../constants/theme';
 
 const ThemeContext = createContext({
-    theme: LightModeTheme,
+    theme: DarkModeTheme,
     toggleTheme: () => {},
     isDark: false,
 });

@@ -5,7 +5,7 @@ import CustomButton from '../components/Button';
 import AddIconDark from '../images/svg/dark/AddIcon.svg';
 import AddIconWhite from '../images/svg/white/AddIcon.svg';
 import MovieCard from '../components/MovieCard';
-import MoviePoster from "../components/MoviePoster";
+import MoviePoster from '../components/MoviePoster';
 
 function Wishlist() {
     const { theme} = useTheme();

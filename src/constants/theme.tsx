@@ -12,6 +12,7 @@ const LightModeTheme = {
         border: 'rgb(255, 255, 255)',
         text: 'rgb(0,0,0)',
         textCard: 'rgb(255,255,255)',
+        textHeaderGradient: 'rgb(0,0,0)',
     },
 };
 
@@ -27,6 +28,7 @@ const DarkModeTheme = {
         border: 'rgb(0,0,0)',
         text: 'rgb(255,255,255)', // Couleur du texte
         textCard: 'rgb(255,255,255)',
+        textHeaderGradient: 'rgb(255,255,255)',
     },
 };
 

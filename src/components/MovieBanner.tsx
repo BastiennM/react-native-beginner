@@ -1,19 +1,32 @@
 import React from 'react';
 import { View, Image, StyleSheet, Dimensions } from 'react-native';
+import LinearGradient from "react-native-linear-gradient";
+import {useTheme} from "../providers/theme_provider";
 
-interface MovieBannerProps {
-    imageUrl: string;
-}
+const MovieBanner: React.FC = () => {
+    const {isDark} = useTheme();
+    const gradientColors = isDark
+        ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
+        : [
+            'rgba(255, 255, 255, 0)',
+            'rgba(255, 255, 255, 0.5)',
+            'rgba(255, 255, 255, 0.8)',
+            'white',
+        ];
 
-const MovieBanner: React.FC<MovieBannerProps> = ({ imageUrl }) => {
     return (
         <View style={styles.container}>
             <Image
-                source={{ uri: imageUrl }}
+                source={{ uri: "https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg" }}
                 style={styles.image}
                 resizeMode="cover"
             />
-            <View style={styles.gradient} />
+            <LinearGradient
+                colors={gradientColors}
+                start={{x: 0.5, y: 0}}
+                end={{x: 0.5, y: 1}}
+                style={styles.gradientOverlay}
+            />
         </View>
     );
 };
@@ -28,10 +41,11 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-    gradient: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        justifyContent: 'flex-end',
+    gradientOverlay: {
+        position: 'absolute',
+        width: '100%',
+        height: '30%',
+        bottom: 0,
     },
 });
 

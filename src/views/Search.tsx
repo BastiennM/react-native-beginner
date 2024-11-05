@@ -2,8 +2,9 @@ import {Text, View, ViewStyle} from 'react-native';
 import * as React from 'react';
 import {useTheme} from '../providers/theme_provider';
 
-function Wishlist() {
+function SearchScreen() {
     const { theme } = useTheme();
+
     const style: { container: ViewStyle } = {
         container: {
             flex: 1,
@@ -15,9 +16,9 @@ function Wishlist() {
 
     return (
         <View style={style.container}>
-            <Text style={{ color: theme.colors.text }}>Wishlist Screen</Text>
+            <Text style={{ color: theme.colors.text }}>Detail Screen</Text>
         </View>
     );
 }
 
-export default Wishlist;
+export default SearchScreen;

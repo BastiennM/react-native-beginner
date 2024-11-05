@@ -2,8 +2,8 @@ import {View, ViewStyle} from 'react-native';
 import * as React from 'react';
 import {useTheme} from '../providers/theme_provider';
 import CustomButton from '../components/button';
-import AddIconDark from './src/images/svg/white/AddIcon.svg';
-import AddIconWhite from './src/images/svg/dark/AddIcon.svg';
+import AddIconDark from '../images/svg/white/AddIcon.svg';
+import AddIconWhite from '../images/svg/dark/AddIcon.svg';
 
 function Wishlist() {
     const { theme} = useTheme();

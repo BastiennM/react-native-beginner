@@ -1,9 +1,12 @@
-import {Text, View, ViewStyle} from 'react-native';
+import {View, ViewStyle} from 'react-native';
 import * as React from 'react';
 import {useTheme} from '../providers/theme_provider';
+import CustomButton from '../components/button';
+import AddIconDark from './src/images/svg/white/AddIcon.svg';
+import AddIconWhite from './src/images/svg/dark/AddIcon.svg';
 
 function Wishlist() {
-    const { theme } = useTheme();
+    const { theme} = useTheme();
     const style: { container: ViewStyle } = {
         container: {
             flex: 1,
@@ -15,7 +18,18 @@ function Wishlist() {
 
     return (
         <View style={style.container}>
-            <Text style={{ color: theme.colors.text }}>Wishlist Screen</Text>
+            <CustomButton
+                label="Label"
+                variant="primary"
+                onPress={() => console.log('Primary button pressed')}
+                iconDark={<AddIconDark />}
+                iconLight={<AddIconWhite />}
+            />
+            <CustomButton
+                label="Label"
+                variant="secondary"
+                onPress={() => console.log('Primary button pressed')}
+            />
         </View>
     );
 }

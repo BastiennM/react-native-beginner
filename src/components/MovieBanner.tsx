@@ -29,13 +29,9 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     gradient: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: '50%',
-        backgroundColor: 'transparent',
-        backgroundImage: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))',
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        justifyContent: 'flex-end',
     },
 });
 

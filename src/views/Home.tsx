@@ -3,7 +3,8 @@ import {View, ViewStyle, ScrollView} from 'react-native';
 import { useTheme } from '../providers/theme_provider';
 import MovieBanner from '../components/MovieBanner';
 import CtaHome from '../components/home/HeaderHome';
-import MarvelStudioList from '../components/home/MarvelStudioList';
+import MovieList from '../components/MovieList';
+import {marvelMovies, popularMovies} from '../constants/movies';
 
 function Home() {
     const { theme } = useTheme();
@@ -14,7 +15,7 @@ function Home() {
         },
         homeContainer: {
             marginHorizontal: 24,
-        }
+        },
     };
 
     return (
@@ -23,7 +24,10 @@ function Home() {
                 <MovieBanner/>
                 <View style={style.homeContainer}>
                     <CtaHome/>
-                    <MarvelStudioList/>
+                    <View style={{}}>
+                        <MovieList movies={marvelMovies} headerLabel={'Marvel Studio'}/>
+                        <MovieList movies={popularMovies} headerLabel={'Best Movies'}/>
+                    </View>
                 </View>
             </ScrollView>
         </View>

@@ -4,17 +4,16 @@ import { useTheme } from '../../providers/theme_provider';
 
 interface HeaderLabelsProps {
     headerLabel: string;
-    seeMoreLabel: string;
 }
 
-const HeaderList: React.FC<HeaderLabelsProps> = ({ headerLabel, seeMoreLabel }) => {
+const HeaderList: React.FC<HeaderLabelsProps> = ({ headerLabel }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
 
     return (
         <View style={styles.container}>
             <Text style={styles.textHeader}>{headerLabel}</Text>
-            <Text style={styles.seeMore}>{seeMoreLabel}</Text>
+            <Text style={styles.seeMore}>See more</Text>
         </View>
     );
 }

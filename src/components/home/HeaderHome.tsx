@@ -1,9 +1,9 @@
-import React from "react";
-import {Text, View, ViewStyle} from "react-native";
-import CustomButton from "../Button";
+import React from 'react';
+import {Text, View, ViewStyle} from 'react-native';
+import CustomButton from '../Button';
 import AddIconDark from '../../images/svg/dark/AddIcon.svg';
 import AddIconWhite from '../../images/svg/white/AddIcon.svg';
-import {useTheme} from "../../providers/theme_provider";
+import {useTheme} from '../../providers/theme_provider';
 
 const HeaderHome: React.FC = () => {
     const style: { container: ViewStyle, buttonContainer: ViewStyle, parentContainer: ViewStyle} = {
@@ -51,6 +51,6 @@ const HeaderHome: React.FC = () => {
             </View>
         </View>
     );
-}
+};
 
 export default HeaderHome;

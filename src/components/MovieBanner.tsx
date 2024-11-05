@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Image, StyleSheet, Dimensions } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 interface MovieBannerProps {
     imageUrl: string;
@@ -14,10 +13,7 @@ const MovieBanner: React.FC<MovieBannerProps> = ({ imageUrl }) => {
                 style={styles.image}
                 resizeMode="cover"
             />
-            <LinearGradient
-                colors={['transparent', 'rgba(0,0,0,0.8)']}
-                style={styles.gradient}
-            />
+            <View style={styles.gradient} />
         </View>
     );
 };
@@ -38,6 +34,8 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         height: '50%',
+        backgroundColor: 'transparent',
+        backgroundImage: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))',
     },
 });
 

@@ -1,26 +1,26 @@
-import {View, ViewStyle, Image, Dimensions} from 'react-native';
-import * as React from 'react';
-import {useTheme} from '../providers/theme_provider';
-import homeImage from '../images/png/home.png';
+import React from 'react';
+import { View, ViewStyle, ScrollView, Text } from 'react-native';
+import { useTheme } from '../providers/theme_provider';
+import MovieBanner from '../components/MovieBanner';
 
-function HomeScreen() {
+function Home() {
     const { theme } = useTheme();
-    const style: { container: ViewStyle } = {
+    const style: { container: ViewStyle; content: ViewStyle } = {
         container: {
             flex: 1,
-            alignItems: 'flex-start',
             backgroundColor: theme.colors.background,
+        },
+        content: {
+            flex: 1,
+            backgroundColor: theme.colors.background, // Ajout de la couleur de fond ici aussi
         },
     };
 
-    const screenWidth = Dimensions.get('window').width;
-
-
     return (
         <View style={style.container}>
-            <Image source={homeImage} style={{ width: screenWidth, height: 430 }} />
+            <Text>Test</Text>
         </View>
     );
 }
 
-export default HomeScreen;
+export default Home;

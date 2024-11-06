@@ -15,7 +15,10 @@ interface CategoryListProps {
     onCategoryPress: (category: Category) => void;
 }
 
-const CategoryList: React.FC<CategoryListProps> = ({selectedCategory, onCategoryPress}) => {
+const CategoryList: React.FC<CategoryListProps> = ({
+                                                       selectedCategory,
+                                                       onCategoryPress,
+                                                   }) => {
     const { theme } = useTheme();
     const insets = useSafeAreaInsets();
 
@@ -32,35 +35,30 @@ const CategoryList: React.FC<CategoryListProps> = ({selectedCategory, onCategory
             styles.wrapper,
             { paddingTop: insets.top + 8 }
         ]}>
-            <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.container}>
-                {categories.map((category) => (
-                    <TouchableOpacity
-                        key={category.id}
-                        onPress={() => onCategoryPress(category.id)}
-                        style={[
-                            styles.categoryButton,
-                            selectedCategory === category.id && {
-                                backgroundColor: theme.colors.text,
-                            },
-                        ]}>
-                        <Text
+            <View style={styles.backgroundBlur}>
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                >
+                    {categories.map((category) => (
+                        <TouchableOpacity
+                            key={category.id}
+                            onPress={() => onCategoryPress(category.id)}
                             style={[
-                                styles.categoryText,
-                                {
-                                    color:
-                                        selectedCategory === category.id
-                                            ? theme.colors.activeCategoryTextColor
-                                            : theme.colors.inactiveCategoryTextColor,
-                                },
+                                styles.categoryButton,
+                                selectedCategory === category.id && styles.selectedButton,
                             ]}>
-                            {category.label}
-                        </Text>
-                    </TouchableOpacity>
-                ))}
-            </ScrollView>
+                            <Text
+                                style={[
+                                    styles.categoryText,
+                                    selectedCategory === category.id && styles.selectedText,
+                                ]}>
+                                {category.label}
+                            </Text>
+                        </TouchableOpacity>
+                    ))}
+                </ScrollView>
+            </View>
         </View>
     );
 };
@@ -71,20 +69,34 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         zIndex: 1,
+        paddingHorizontal: 24,
+    },
+    backgroundBlur: {
+        backgroundColor: 'rgba(71, 68, 65, 0.8)',
+        padding: 3,
+        borderRadius: 90,
+        overflow: 'hidden', // Ajout de cette ligne
     },
     container: {
         paddingHorizontal: 24,
         gap: 12,
     },
     categoryButton: {
-        paddingHorizontal: 24,
-        paddingVertical: 8,
+        paddingHorizontal: 15, // Padding par défaut
+        paddingVertical: 12,
         borderRadius: 100,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    selectedButton: {
+        backgroundColor: '#FFFFFF',
+        paddingHorizontal: 24, // Padding plus grand quand sélectionné
     },
     categoryText: {
         fontSize: 16,
         fontWeight: '600',
+        color: '#FFFFFF',
+    },
+    selectedText: {
+        color: '#000000',
     },
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet, Dimensions } from 'react-native';
-import LinearGradient from "react-native-linear-gradient";
-import {useTheme} from "../providers/theme_provider";
+import LinearGradient from 'react-native-linear-gradient';
+import {useTheme} from '../providers/theme_provider';
 
 const MovieBanner: React.FC = () => {
     const {isDark} = useTheme();
@@ -17,7 +17,7 @@ const MovieBanner: React.FC = () => {
     return (
         <View style={styles.container}>
             <Image
-                source={{ uri: "https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg" }}
+                source={{ uri: 'https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg' }}
                 style={styles.image}
                 resizeMode="cover"
             />

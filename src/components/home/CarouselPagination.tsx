@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { View, StyleSheet } from 'react-native';
-import { carouselImages } from '../../constants/movies';
 import {useTheme} from '../../providers/theme_provider';
+import {Movie} from "../MovieList";
 
 interface CarouselPaginationProps {
     currentPage: number;
+    carouselImages: Movie[];
 }
 
-const CarouselPagination: React.FC<CarouselPaginationProps> = ({ currentPage }) => {
+const CarouselPagination: React.FC<CarouselPaginationProps> = ({ currentPage, carouselImages }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
 

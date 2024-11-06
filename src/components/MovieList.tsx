@@ -1,4 +1,4 @@
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, FlatList, Text} from 'react-native';
 import {useTheme} from '../providers/theme_provider';
 import HeaderList from './home/HeaderList';
 import MoviePoster from './MoviePoster';
@@ -15,7 +15,7 @@ export interface Movie {
     genre_ids: number[];
 }
 
-export enum TypeList { ByGenre, Best}
+export enum TypeList { ByGenre = 0, Best = 1}
 
 interface MovieListProps {
     movies: Movie[];
@@ -33,31 +33,36 @@ const MovieList: React.FC<MovieListProps> = ({
 
     return (
         <View style={styles.container}>
-            <HeaderList
-                headerLabel={headerLabel}
-            />
-            <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.scrollContent}
-            >
-                {movies.map((movie) => (
-                    <View key={movie.id} style={styles.movieContainer}>
+            <View style={{marginRight: 24}}>
+                <HeaderList
+                    headerLabel={headerLabel}
+                />
+            </View>
+            <FlatList
+                data={movies}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({item}) => (
+                    <View style={styles.movieContainer}>
                         {type === TypeList.ByGenre ? (
                             <MoviePoster
-                                imageUrl={movie.poster_path}
-                                title={movie.title}
+                                imageUrl={item.poster_path}
+                                title={item.title}
                             />
                         ) : (
                             <MovieCard
-                                imageUrl={movie.poster_path}
-                                movieName={movie.title}
-                                rating={movie.vote_average}
+                                imageUrl={item.poster_path}
+                                movieName={item.title}
+                                rating={item.vote_average}
                             />
                         )}
                     </View>
-                ))}
-            </ScrollView>
+                )}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.scrollContent}
+                style={{flex: 1}}
+            >
+            </FlatList>
         </View>
     );
 };

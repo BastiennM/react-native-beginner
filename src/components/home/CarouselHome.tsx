@@ -2,15 +2,16 @@ import React from 'react';
 import {View, Image, StyleSheet, Dimensions, ScrollView, NativeSyntheticEvent, NativeScrollEvent} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useTheme} from '../../providers/theme_provider';
-import {carouselImages} from '../../constants/movies';
+import {Movie} from "../MovieList";
 
 interface CarouselHomeProps {
     onPageChange: (page: number) => void;
+    carouselImages: Movie[];
 }
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-const CarouselHome: React.FC<CarouselHomeProps> = ({ onPageChange }) => {    const {isDark, theme} = useTheme();
+const CarouselHome: React.FC<CarouselHomeProps> = ({ onPageChange, carouselImages }) => {    const {isDark, theme} = useTheme();
     const styles = createStyle(theme);
 
     const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -38,10 +39,10 @@ const CarouselHome: React.FC<CarouselHomeProps> = ({ onPageChange }) => {    con
                 onScroll={handleScroll}
                 scrollEventThrottle={16}
             >
-                {carouselImages.map((imageUrl, index) => (
+                {carouselImages.map((movie, index) => (
                     <View key={index} style={styles.slideContainer}>
                         <Image
-                            source={{ uri: imageUrl }}
+                            source={{ uri: movie.poster_path }}
                             style={styles.image}
                             resizeMode="cover"
                         />

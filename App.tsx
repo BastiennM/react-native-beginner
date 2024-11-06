@@ -20,6 +20,7 @@ import SearchIcon from './src/images/svg/white/Search.svg';
 import SearchDarkIcon from './src/images/svg/dark/Search.svg';
 import SearchFillIcon from './src/images/svg/SearchFill.svg';
 import {ThemeProvider, useTheme} from './src/providers/theme_provider';
+import {SafeAreaProvider} from "react-native-safe-area-context";
 
 const Tab = createBottomTabNavigator();
 
@@ -73,10 +74,12 @@ const Body = () => {
 
 export default function App() {
     return (
-        <ThemeProvider>
-            <NavigationContainer>
-                <Body />
-            </NavigationContainer>
-        </ThemeProvider>
+        <SafeAreaProvider>
+            <ThemeProvider>
+                <NavigationContainer>
+                    <Body />
+                </NavigationContainer>
+            </ThemeProvider>
+        </SafeAreaProvider>
     );
 }

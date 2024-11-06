@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {useTheme} from '../providers/theme_provider';
 
 interface MovieCardProps {
@@ -30,11 +30,10 @@ const MovieCard: React.FC<MovieCardProps> = ({imageUrl, movieName, rating}) => {
 
 const createStyles = (theme: any) => StyleSheet.create({
     container: {
-        width: '35%',
+        width: Dimensions.get('window').width * 0.33,
         height: 200,
         borderRadius: 16,
         overflow: 'hidden',
-        position: 'relative',
     },
     image: {
         width: '100%',

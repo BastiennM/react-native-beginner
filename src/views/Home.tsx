@@ -1,59 +1,84 @@
-import React, {useState, useEffect} from 'react';
-import {View, ViewStyle, ScrollView} from 'react-native';
-import { useTheme } from '../providers/theme_provider';
+import React, {useEffect, useState} from 'react';
+import {ScrollView, View, StyleSheet} from 'react-native';
+import {useTheme} from '../providers/theme_provider';
 import CarouselHome from '../components/home/CarouselHome';
 import CtaHome from '../components/home/HeaderHome';
-import MovieList from '../components/MovieList';
+import MovieList, {Movie, TypeList} from '../components/MovieList';
 import CarouselPagination from '../components/home/CarouselPagination';
-import {Category, fetchBestMovies, fetchMarvelMovies} from '../data/api';
-import { Movie } from '../components/MovieList';
+import {Category, fetchBestMovies, fetchBestMoviesByGenre, fetchMarvelMovies, fetchMoviesByGenre} from '../data/api';
+import CategoryList from "../components/home/CategoryList";
 
 function Home() {
     const {theme} = useTheme();
-    const style: { container: ViewStyle, homeContainer: ViewStyle } = {
-        container: {
-            flex: 1,
-            backgroundColor: theme.colors.background,
-        },
-        homeContainer: {
-            marginHorizontal: 24,
-        },
-    };
+    const style = createStyle(theme);
     const [currentPage, setCurrentPage] = useState(0);
-    const [movies, setMovies] = useState<Movie[]>([]);
-    const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
+    const [marvelAllMovies, setMarvelAllMovies] = useState<Movie[]>([]);
+    const [popularAllMovies, setPopularAllMovies] = useState<Movie[]>([]);
+    const [carouselImages, setCarouselImages] = useState<Movie[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<Category>(Category.ALL);
+    const [moviesByGenre, setMoviesByGenre] = useState<Movie[]>([]);
+    const [bestMoviesByGenre, setBestMoviesByGenre] = useState<Movie[]>([]);
 
     useEffect(() => {
         const loadMovies = async () => {
             try {
-                const fetchedMovies = await fetchMarvelMovies(Category.ALL);
-                const fetchedPopularMovies = await fetchBestMovies(Category.ALL);
+                const fetchedMovies = await fetchMarvelMovies(selectedCategory);
+                const fetchedPopularMovies = await fetchBestMovies(selectedCategory);
+                const fetchedMoviesByGenre = await fetchMoviesByGenre(selectedCategory);
+                const fetchedBestMoviesByGenre = await fetchBestMoviesByGenre(selectedCategory);
 
-                setMovies(fetchedMovies);
-                setPopularMovies(fetchedPopularMovies);
+                setMarvelAllMovies(fetchedMovies);
+                setPopularAllMovies(fetchedPopularMovies);
+
+                setMoviesByGenre(fetchedMoviesByGenre);
+                setBestMoviesByGenre(fetchedBestMoviesByGenre);
+                setCarouselImages(fetchedBestMoviesByGenre.slice(0, 5));
             } catch (error) {
                 console.error('Error loading movies:', error);
             }
         };
 
         loadMovies();
-    }, []);
+    }, [selectedCategory]); // Ajouter selectedCategory comme dépendance
 
     return (
         <View style={style.container}>
             <ScrollView>
-                <CarouselHome onPageChange={setCurrentPage}/>
-                <View style={style.homeContainer}>
-                    <CtaHome/>
-                    <CarouselPagination currentPage={currentPage}/>
-                    <View style={{gap: 32}}>
-                        <MovieList movies={movies} headerLabel={'Marvel Studio'}/>
-                        <MovieList movies={popularMovies} headerLabel={'Best Movies'}/>
+                <CarouselHome onPageChange={setCurrentPage} carouselImages={carouselImages}/>
+                <CategoryList
+                    selectedCategory={selectedCategory}
+                    onCategoryPress={setSelectedCategory}
+                />
+                <View>
+                    <View style={style.topPageContainer}>
+                        <CtaHome/>
+                        <CarouselPagination currentPage={currentPage} carouselImages={carouselImages}/>
+                    </View>
+                    <View style={style.movieListContainer}>
+                        <MovieList movies={selectedCategory === Category.ALL ? marvelAllMovies : moviesByGenre} headerLabel={'Marvel Studio'} type={TypeList.ByGenre}/>
+                        <MovieList movies={selectedCategory === Category.ALL ? popularAllMovies : bestMoviesByGenre} headerLabel={'Best Movies'} type={TypeList.Best}/>
                     </View>
                 </View>
             </ScrollView>
         </View>
     );
 }
+
+const createStyle = (theme: any) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    carouselContainer: {
+        position: 'relative',
+    },
+    topPageContainer: {
+        marginHorizontal: 24,
+    },
+    movieListContainer: {
+        marginLeft: 24,
+        gap: 32
+    }
+});
 
 export default Home;

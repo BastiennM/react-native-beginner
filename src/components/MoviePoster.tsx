@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {useTheme} from '../providers/theme_provider';
 
 interface MoviePosterProps {
@@ -33,7 +33,7 @@ const MoviePoster: React.FC<MoviePosterProps> = ({imageUrl, title}) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: 150,
+        width: Dimensions.get('window').width * 0.33,
         gap: 8,
     },
     imageContainer: {

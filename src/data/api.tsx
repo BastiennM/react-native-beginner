@@ -5,8 +5,14 @@ import {API_KEY} from '@env';
 
 export enum Category { ALL, ROMANCE, SPORTS, KIDS, HORROR }
 
+interface CategoryParams {
+    with_genres?: number;
+    certification_country?: string;
+    'certification.lte'?: string;
+}
+
 const BASE_URL = 'https://api.themoviedb.org/3';
-const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500';
+const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/original';
 
 const api = axios.create({
     baseURL: BASE_URL,
@@ -15,8 +21,8 @@ const api = axios.create({
     },
 });
 
-const getParams = (category: Category, additionalParams: Record<string, any> = {}) => {
-    const params: Record<string, any> = { ...additionalParams };
+const getParams = (category: Category): CategoryParams => {
+    const params: CategoryParams = {};
 
     switch (category) {
         case Category.ROMANCE:
@@ -42,7 +48,8 @@ const getParams = (category: Category, additionalParams: Record<string, any> = {
 
 const fetchMovies = async (endpoint: string, category: Category, additionalParams: Record<string, any> = {}) : Promise<Movie[]> => {
     try {
-        const params = getParams(category, additionalParams);
+        const categoryParams = getParams(category);
+        const params = { ...categoryParams, ...additionalParams };
         const response = await api.get(endpoint, { params });
 
         return response.data.results.map((movie: any) => ({
@@ -68,3 +75,11 @@ export const fetchMarvelMovies = (category: Category) => {
 export const fetchBestMovies = (category: Category) => {
     return fetchMovies('/discover/movie', category, { sort_by: 'vote_average.desc', 'vote_count.gte': 1000 });
 };
+
+export const fetchMoviesByGenre = (category: Category) => {
+    return fetchMovies('/discover/movie', category);
+}
+
+export const fetchBestMoviesByGenre = (category: Category) => {
+    return fetchMovies('/discover/movie', category, { sort_by: 'vote_average.desc', 'vote_count.gte': 1000 });
+}

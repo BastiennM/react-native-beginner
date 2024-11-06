@@ -2,6 +2,7 @@ import {View, StyleSheet, ScrollView} from 'react-native';
 import {useTheme} from '../providers/theme_provider';
 import HeaderList from './home/HeaderList';
 import MoviePoster from './MoviePoster';
+import MovieCard from "./MovieCard";
 
 export interface Movie {
     id: number;
@@ -14,8 +15,11 @@ export interface Movie {
     genre_ids: number[];
 }
 
+export enum TypeList { ByGenre, Best}
+
 interface MovieListProps {
     movies: Movie[];
+    type: TypeList;
     headerLabel: string;
     seeMoreLabel?: string;
 }
@@ -23,6 +27,7 @@ interface MovieListProps {
 const MovieList: React.FC<MovieListProps> = ({
     movies,
     headerLabel,
+    type
 }) => {
     const {theme} = useTheme();
 
@@ -38,10 +43,18 @@ const MovieList: React.FC<MovieListProps> = ({
             >
                 {movies.map((movie) => (
                     <View key={movie.id} style={styles.movieContainer}>
-                        <MoviePoster
-                            imageUrl={movie.poster_path}
-                            title={movie.title}
-                        />
+                        {type === TypeList.ByGenre ? (
+                            <MoviePoster
+                                imageUrl={movie.poster_path}
+                                title={movie.title}
+                            />
+                        ) : (
+                            <MovieCard
+                                imageUrl={movie.poster_path}
+                                movieName={movie.title}
+                                rating={movie.vote_average}
+                            />
+                        )}
                     </View>
                 ))}
             </ScrollView>

@@ -1,9 +1,12 @@
 import axios from 'axios';
+import {Movie} from '../components/MovieList';
+// @ts-ignore
+import {API_KEY} from '@env';
 
 export enum Category { ALL, ROMANCE, SPORTS, KIDS, HORROR }
 
-const API_KEY = process.env.API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
+const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
 const api = axios.create({
     baseURL: BASE_URL,
@@ -37,11 +40,21 @@ const getParams = (category: Category, additionalParams: Record<string, any> = {
     return params;
 };
 
-const fetchMovies = async (endpoint: string, category: Category, additionalParams: Record<string, any> = {}) => {
+const fetchMovies = async (endpoint: string, category: Category, additionalParams: Record<string, any> = {}) : Promise<Movie[]> => {
     try {
         const params = getParams(category, additionalParams);
         const response = await api.get(endpoint, { params });
-        return response.data.results;
+
+        return response.data.results.map((movie: any) => ({
+            id: movie.id,
+            title: movie.title,
+            poster_path: BASE_POSTER_URL + movie.poster_path,
+            backdrop_path: movie.backdrop_path,
+            overview: movie.overview,
+            release_date: movie.release_date,
+            vote_average: movie.vote_average,
+            genre_ids: movie.genre_ids,
+        }));
     } catch (error) {
         console.error(`Error fetching movies from ${endpoint}:`, error);
         throw error;

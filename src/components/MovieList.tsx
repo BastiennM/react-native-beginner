@@ -3,7 +3,7 @@ import {useTheme} from '../providers/theme_provider';
 import HeaderList from './home/HeaderList';
 import MoviePoster from './MoviePoster';
 
-interface Movie {
+export interface Movie {
     id: number;
     title: string;
     poster_path: string;

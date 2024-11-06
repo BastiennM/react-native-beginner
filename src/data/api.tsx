@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-enum Category { ALL, ROMANCE, SPORTS, KIDS, HORROR }
+export enum Category { ALL, ROMANCE, SPORTS, KIDS, HORROR }
 
 const API_KEY = process.env.API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';

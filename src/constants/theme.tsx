@@ -13,6 +13,7 @@ const LightModeTheme = {
         text: 'rgb(0,0,0)',
         textCard: 'rgb(255,255,255)',
         textHeaderGradient: 'rgb(0,0,0)',
+        inactiveCarouselPaginationColor: 'rgb(189,189,189)',
     },
 };
 
@@ -29,6 +30,7 @@ const DarkModeTheme = {
         text: 'rgb(255,255,255)', // Couleur du texte
         textCard: 'rgb(255,255,255)',
         textHeaderGradient: 'rgb(255,255,255)',
+        inactiveCarouselPaginationColor: 'rgb(242,242,189)',
     },
 };
 

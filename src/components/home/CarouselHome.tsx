@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
-import { View, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
+import React from 'react';
+import {View, Image, StyleSheet, Dimensions, ScrollView, NativeSyntheticEvent, NativeScrollEvent} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {useTheme} from '../providers/theme_provider';
+import {useTheme} from '../../providers/theme_provider';
+import {carouselImages} from '../../constants/movies';
 
-const BANNER_IMAGES = [
-    'https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg',
-    'https://image.tmdb.org/t/p/original/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg',
-    'https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-    'https://image.tmdb.org/t/p/original/bcCBq9N1EMo3daNIjWJ8kYvrQm6.jpg',
-];
+interface CarouselHomeProps {
+    onPageChange: (page: number) => void;
+}
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-const MovieBanner: React.FC = () => {
-    const {isDark, theme} = useTheme();
-    const [currentPage, setCurrentPage] = useState(0);
+const CarouselHome: React.FC<CarouselHomeProps> = ({ onPageChange }) => {    const {isDark, theme} = useTheme();
     const styles = createStyle(theme);
+
+    const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        const contentOffset = event.nativeEvent.contentOffset;
+        const viewSize = event.nativeEvent.layoutMeasurement;
+        const newPage = Math.floor(contentOffset.x / viewSize.width);
+        onPageChange(newPage);
+    };
 
     const gradientColors = isDark
         ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
@@ -26,11 +29,6 @@ const MovieBanner: React.FC = () => {
             'white',
         ];
 
-    const handleScroll = (event: any) => {
-        const page = Math.round(event.nativeEvent.contentOffset.x / SCREEN_WIDTH);
-        setCurrentPage(page);
-    };
-
     return (
         <View style={styles.container}>
             <ScrollView
@@ -40,7 +38,7 @@ const MovieBanner: React.FC = () => {
                 onScroll={handleScroll}
                 scrollEventThrottle={16}
             >
-                {BANNER_IMAGES.map((imageUrl, index) => (
+                {carouselImages.map((imageUrl, index) => (
                     <View key={index} style={styles.slideContainer}>
                         <Image
                             source={{ uri: imageUrl }}
@@ -56,17 +54,6 @@ const MovieBanner: React.FC = () => {
                     </View>
                 ))}
             </ScrollView>
-            <View style={styles.pagination}>
-                {BANNER_IMAGES.map((_, index) => (
-                    <View
-                        key={index}
-                        style={[
-                            styles.paginationDot,
-                            currentPage === index && styles.paginationDotActive,
-                        ]}
-                    />
-                ))}
-            </View>
         </View>
     );
 };
@@ -112,4 +99,4 @@ const createStyle  = (theme: any) => StyleSheet.create({
     },
 });
 
-export default MovieBanner;
+export default CarouselHome;

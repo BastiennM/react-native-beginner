@@ -55,4 +55,11 @@ let popularMovies = [
     },
 ];
 
-export { marvelMovies, popularMovies };
+let carouselImages = [
+    'https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg',
+    'https://image.tmdb.org/t/p/original/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg',
+    'https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
+    'https://image.tmdb.org/t/p/original/bcCBq9N1EMo3daNIjWJ8kYvrQm6.jpg',
+];
+
+export { marvelMovies, popularMovies, carouselImages };

@@ -6,7 +6,12 @@ import MoviePoster from './MoviePoster';
 interface Movie {
     id: number;
     title: string;
-    imageUrl: string;
+    poster_path: string;
+    backdrop_path: string;
+    overview: string;
+    release_date: string;
+    vote_average: number;
+    genre_ids: number[];
 }
 
 interface MovieListProps {
@@ -34,7 +39,7 @@ const MovieList: React.FC<MovieListProps> = ({
                 {movies.map((movie) => (
                     <View key={movie.id} style={styles.movieContainer}>
                         <MoviePoster
-                            imageUrl={movie.imageUrl}
+                            imageUrl={movie.poster_path}
                             title={movie.title}
                         />
                     </View>

@@ -32,7 +32,8 @@ const createStyles = (theme: any) => StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         gap: 8,
-        marginTop: 16,
+        marginTop: 24,
+        marginBottom: 24,
     },
     paginationDot: {
         width: 8,

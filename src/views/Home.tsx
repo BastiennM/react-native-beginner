@@ -27,7 +27,7 @@ function Home() {
                 <View style={style.homeContainer}>
                     <CtaHome/>
                     <CarouselPagination currentPage={currentPage} />
-                    <View style={{}}>
+                    <View style={{gap: 32}}>
                         <MovieList movies={marvelMovies} headerLabel={'Marvel Studio'}/>
                         <MovieList movies={popularMovies} headerLabel={'Best Movies'}/>
                     </View>

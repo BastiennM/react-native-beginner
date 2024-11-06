@@ -20,7 +20,6 @@ const MovieList: React.FC<MovieListProps> = ({
     headerLabel,
 }) => {
     const {theme} = useTheme();
-    const styles = createStyles(theme);
 
     return (
         <View style={styles.container}>
@@ -45,9 +44,8 @@ const MovieList: React.FC<MovieListProps> = ({
     );
 };
 
-const createStyles = (theme: any) => StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
-        marginVertical: 16,
         gap: 16,
     },
     scrollContent: {

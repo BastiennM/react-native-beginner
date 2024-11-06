@@ -33,7 +33,6 @@ const createStyles = (theme: any) => StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 24,
     }
 });
 

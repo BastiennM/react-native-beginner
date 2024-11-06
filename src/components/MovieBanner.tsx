@@ -13,8 +13,9 @@ const BANNER_IMAGES = [
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 const MovieBanner: React.FC = () => {
-    const {isDark} = useTheme();
+    const {isDark, theme} = useTheme();
     const [currentPage, setCurrentPage] = useState(0);
+    const styles = createStyle(theme);
 
     const gradientColors = isDark
         ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
@@ -70,7 +71,7 @@ const MovieBanner: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create({
+const createStyle  = (theme: any) => StyleSheet.create({
     container: {
         width: '100%',
         height: Dimensions.get('window').height * 0.5,
@@ -106,8 +107,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255, 255, 255, 0.5)',
     },
     paginationDotActive: {
-        backgroundColor: 'white',
-        width: 24,
+        backgroundColor: theme.colors.primary,
+        width: 8,
     },
 });
 

@@ -15,13 +15,13 @@ import {
     BookmarkIcon, BookmarkDarkIcon, BookmarkFillIcon,
     HomeIcon, HomeDarkIcon, HomeFillIcon,
     ProfileIcon, ProfileDarkIcon, ProfileFillIcon,
-    SearchIcon, SearchDarkIcon, SearchFillIcon
+    SearchIcon, SearchDarkIcon, SearchFillIcon,
 } from './assets/icons';
 
 const Tab = createBottomTabNavigator();
 
 // Configuration des onglets de navigation
-const getTabScreenOptions = (theme: any, isDark: boolean) => ({
+const getTabScreenOptions = (theme: any) => ({
     tabBarStyle: {
         backgroundColor: theme.colors.background,
         borderTopColor: theme.colors.border,
@@ -32,12 +32,12 @@ const getTabScreenOptions = (theme: any, isDark: boolean) => ({
 });
 
 // Configuration des icônes pour chaque onglet
-const getTabIcon = (focused: boolean, isDark: boolean, icons: { 
-    default: React.ComponentType, 
-    dark: React.ComponentType, 
-    filled: React.ComponentType 
+const getTabIcon = (focused: boolean, isDark: boolean, icons: {
+    default: React.ComponentType,
+    dark: React.ComponentType,
+    filled: React.ComponentType
 }) => {
-    if (focused) return <icons.filled />;
+    if (focused) {return <icons.filled />;}
     return isDark ? <icons.dark /> : <icons.default />;
 };
 
@@ -49,8 +49,8 @@ const TAB_SCREENS = [
         icons: {
             default: HomeIcon,
             dark: HomeDarkIcon,
-            filled: HomeFillIcon
-        }
+            filled: HomeFillIcon,
+        },
     },
     {
         name: 'Search',
@@ -58,8 +58,8 @@ const TAB_SCREENS = [
         icons: {
             default: SearchIcon,
             dark: SearchDarkIcon,
-            filled: SearchFillIcon
-        }
+            filled: SearchFillIcon,
+        },
     },
     {
         name: 'Wishlist',
@@ -67,8 +67,8 @@ const TAB_SCREENS = [
         icons: {
             default: BookmarkIcon,
             dark: BookmarkDarkIcon,
-            filled: BookmarkFillIcon
-        }
+            filled: BookmarkFillIcon,
+        },
     },
     {
         name: 'Profile',
@@ -76,23 +76,23 @@ const TAB_SCREENS = [
         icons: {
             default: ProfileIcon,
             dark: ProfileDarkIcon,
-            filled: ProfileFillIcon
-        }
-    }
+            filled: ProfileFillIcon,
+        },
+    },
 ];
 
 const TabNavigator = () => {
     const { theme, isDark } = useTheme();
 
     return (
-        <Tab.Navigator screenOptions={getTabScreenOptions(theme, isDark)}>
+        <Tab.Navigator screenOptions={getTabScreenOptions(theme)}>
             {TAB_SCREENS.map(screen => (
                 <Tab.Screen
                     key={screen.name}
                     name={screen.name}
                     component={screen.component}
                     options={{
-                        tabBarIcon: ({focused}) => getTabIcon(focused, isDark, screen.icons)
+                        tabBarIcon: ({focused}) => getTabIcon(focused, isDark, screen.icons),
                     }}
                 />
             ))}

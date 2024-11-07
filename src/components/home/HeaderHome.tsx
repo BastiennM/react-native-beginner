@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, ViewStyle} from 'react-native';
 import CustomButton from '../Button';
+// @ts-ignore
 import AddIconDark from '../../../assets/images/svg/dark/AddIcon.svg';
+// @ts-ignore
 import AddIconWhite from '../../../assets/images/svg/white/AddIcon.svg';
 import {useTheme} from '../../providers/theme_provider';
 import Text from '../Text';

@@ -6,27 +6,44 @@ import CtaHome from '../components/home/HeaderHome';
 import MovieList, {Movie, TypeList} from '../components/MovieList';
 import CarouselPagination from '../components/home/CarouselPagination';
 import {Category, fetchBestMovies, fetchBestMoviesByGenre, fetchMarvelMovies, fetchMoviesByGenre} from '../data/api';
-import CategoryList from "../components/home/CategoryList";
-import BlackFriday from "../components/home/BlackFriday";
+import CategoryList from '../components/home/CategoryList';
+import BlackFriday from '../components/home/BlackFriday';
+import {capitalise} from '../utils/utils_text';
 
 function Home() {
     const {theme} = useTheme();
     const style = createStyle(theme);
 
-    const [currentPage, setCurrentPage] = useState(0);
+    //CurrentPageCarousel est un état qui stocke l'index de la page actuelle du carousel
+    const [currentPageCarousel, setCurrentPageCarousel] = useState(0);
+
+    //Dans le cas ou la catégorie est ALL, on affiche les films de Marvel
+    //PopularAllMovies est un état qui stocke les films (tout les films) triés par popularité
     const [marvelAllMovies, setMarvelAllMovies] = useState<Movie[]>([]);
     const [popularAllMovies, setPopularAllMovies] = useState<Movie[]>([]);
+
+    //Carousel images stock les 5 premiers films triés par popularité
     const [carouselImages, setCarouselImages] = useState<Movie[]>([]);
+
+    //Catégorie actuelle sélectionnée
     const [selectedCategory, setSelectedCategory] = useState<Category>(Category.ALL);
+
+    //Ces deux listes dynamiques stockent les films triés par genre et par popularité selon la catégorie sélectionnée
     const [moviesByGenre, setMoviesByGenre] = useState<Movie[]>([]);
     const [bestMoviesByGenre, setBestMoviesByGenre] = useState<Movie[]>([]);
+
+    //On détermine les listes de films à afficher en fonction de la catégorie sélectionnée
+    const secondMovieList = selectedCategory === Category.ALL ? popularAllMovies : bestMoviesByGenre;
+    const headerLabelFirstList = selectedCategory === Category.ALL ? 'Marvel Studio' : `${capitalise(Category[selectedCategory])} movies`;
+    const firstMoviesList = selectedCategory === Category.ALL ? marvelAllMovies : moviesByGenre;
 
     // Nouvelle fonction pour gérer le changement de catégorie
     const handleCategoryChange = (category: Category) => {
         setSelectedCategory(category);
-        setCurrentPage(0); // Réinitialise l'index de pagination
+        setCurrentPageCarousel(0); // Réinitialise l'index de pagination
     };
 
+    //Fonction pour récupérer les films en fonction de la catégorie sélectionnée (appel API)
     useEffect(() => {
         const loadMovies = async () => {
             try {
@@ -52,19 +69,19 @@ function Home() {
     return (
         <View style={style.container}>
             <ScrollView>
-                <CarouselHome onPageChange={setCurrentPage} carouselImages={carouselImages}/>
+                <CarouselHome onPageChange={setCurrentPageCarousel} carouselImages={carouselImages} currentPage={currentPageCarousel}/>
                 <CategoryList
                     selectedCategory={selectedCategory}
                     onCategoryPress={handleCategoryChange}
                 />
-                <View>
+                <View style={style.globalHomeStyle}>
                     <View style={style.topPageContainer}>
                         <CtaHome/>
-                        <CarouselPagination currentPage={currentPage} carouselImages={carouselImages}/>
+                        <CarouselPagination currentPage={currentPageCarousel} carouselImages={carouselImages}/>
                     </View>
                     <View style={style.movieListContainer}>
-                        <MovieList movies={selectedCategory === Category.ALL ? marvelAllMovies : moviesByGenre} headerLabel={'Marvel Studio'} type={TypeList.ByGenre}/>
-                        <MovieList movies={selectedCategory === Category.ALL ? popularAllMovies : bestMoviesByGenre} headerLabel={'Best Movies'} type={TypeList.Best}/>
+                        <MovieList movies={firstMoviesList} headerLabel={headerLabelFirstList} type={TypeList.ByGenre}/>
+                        <MovieList movies={secondMovieList} headerLabel={'Best Movies'} type={TypeList.Best}/>
                     </View>
                     <BlackFriday/>
                 </View>
@@ -86,8 +103,11 @@ const createStyle = (theme: any) => StyleSheet.create({
     },
     movieListContainer: {
         marginLeft: 24,
-        gap: 32
-    }
+        gap: 32,
+    },
+    globalHomeStyle: {
+        paddingBottom:16,
+    },
 });
 
 export default Home;

@@ -24,7 +24,7 @@ Je me donne 16/20
 20/20 signifie pour moi le projet parfait, ce qu'il m'a manqué :
 Je m'enlève des points pour les raisons suivantes :
 
-- Architecture du projet -> Elle peut être améliorée dans le nommage des fichiers / dossiers
+- Architecture du projet -> Elle peut être améliorée dans le nommage des fichiers / dossiers + erreur TS sur les icônes
 - Dark mode -> Seulement sur un switch manuel, aurait pu être automatique en fonction du système et ensuite possibilité de switcher manuellement
 - Connaissance du language -> J'ai surement utilisé des widgets qui ne sont pas optimisés ou qui ne sont pas les meilleurs pour la situation (résulte de la non connaissance du language)
 - Temps de chargement des films -> J'aurais pu optimiser le chargement des films en utilisant un système de loader / skeleton

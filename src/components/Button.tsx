@@ -1,6 +1,7 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet, View} from 'react-native';
+import {TouchableOpacity, StyleSheet, View} from 'react-native';
 import {useTheme} from '../providers/theme_provider';
+import Text from './Text';
 
 interface CustomButtonProps {
     label: string;
@@ -36,7 +37,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
             onPress={onPress}>
             <View style={styles.buttonContent}>
                 {needIcon && icon && <View style={styles.iconContainer}>{icon}</View>}
-                <Text
+                <Text semiBold
                     style={[
                         styles.buttonText,
                         {color: textColor},

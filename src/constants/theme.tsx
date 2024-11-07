@@ -38,4 +38,16 @@ const DarkModeTheme = {
     },
 };
 
+export const FONTS = {
+    thin: 'Gilroy-Thin',
+    ultraLight: 'Gilroy-UltraLight',
+    light: 'Gilroy-Light',
+    regular: 'Gilroy-Regular',
+    medium: 'Gilroy-Medium',
+    semiBold: 'Gilroy-SemiBold',
+    bold: 'Gilroy-Bold',
+    extraBold: 'Gilroy-ExtraBold',
+    black: 'Gilroy-Black',
+};
+
 export { LightModeTheme, DarkModeTheme };

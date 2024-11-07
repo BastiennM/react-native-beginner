@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useTheme } from '../../providers/theme_provider';
+import Text from '../Text';
 
 interface HeaderLabelsProps {
     headerLabel: string;
@@ -12,8 +13,8 @@ const HeaderList: React.FC<HeaderLabelsProps> = ({ headerLabel }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.textHeader}>{headerLabel}</Text>
-            <Text style={styles.seeMore}>See more</Text>
+            <Text semiBold style={styles.textHeader}>{headerLabel}</Text>
+            <Text semiBold style={styles.seeMore}>See more</Text>
         </View>
     );
 }
@@ -21,7 +22,6 @@ const HeaderList: React.FC<HeaderLabelsProps> = ({ headerLabel }) => {
 const createStyles = (theme: any) => StyleSheet.create({
     textHeader: {
         fontSize: 20,
-        fontWeight: '500',
         color: theme.colors.text,
     },
     seeMore: {

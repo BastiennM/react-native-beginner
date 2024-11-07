@@ -1,9 +1,10 @@
 import React from 'react';
-import {Text, View, ViewStyle} from 'react-native';
+import {View, ViewStyle} from 'react-native';
 import CustomButton from '../Button';
-import AddIconDark from '../../images/svg/dark/AddIcon.svg';
-import AddIconWhite from '../../images/svg/white/AddIcon.svg';
+import AddIconDark from '../../../assets/images/svg/dark/AddIcon.svg';
+import AddIconWhite from '../../../assets/images/svg/white/AddIcon.svg';
 import {useTheme} from '../../providers/theme_provider';
+import Text from '../Text';
 
 const HeaderHome: React.FC = () => {
     const style: { container: ViewStyle, buttonContainer: ViewStyle, parentContainer: ViewStyle} = {
@@ -27,8 +28,8 @@ const HeaderHome: React.FC = () => {
     return (
         <View style={style.parentContainer}>
             <View style={style.container}>
-                <Text style={{color: theme.colors.textHeaderGradient, fontSize: 16}}>My list</Text>
-                <Text style={{color: theme.colors.textHeaderGradient, fontSize: 16}}>Discover</Text>
+                <Text medium style={{color: theme.colors.textHeaderGradient, fontSize: 16}}>My list</Text>
+                <Text medium style={{color: theme.colors.textHeaderGradient, fontSize: 16}}>Discover</Text>
             </View>
             <View style={style.container}>
                 <View style={style.buttonContainer}>

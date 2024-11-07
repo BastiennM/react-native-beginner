@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {View, Image, StyleSheet, Dimensions} from 'react-native';
 import {useTheme} from '../providers/theme_provider';
+import LinearGradient from "react-native-linear-gradient";
+import Text from './Text';
 
 interface MovieCardProps {
     imageUrl: string;
@@ -9,20 +11,45 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({imageUrl, movieName, rating}) => {
-    const {theme} = useTheme();
+    const {theme, isDark} = useTheme();
     const styles = createStyles(theme);
+    const gradientColors = isDark
+        ? [
+            'rgba(0, 0, 0, 0)',
+            'rgba(0, 0, 0, 0.05)',
+            'rgba(0, 0, 0, 0.1)',
+            'rgba(0, 0, 0, 0.2)',
+            'rgba(0, 0, 0, 0.3)',
+            'rgba(0, 0, 0, 0.5)',
+            'rgba(0, 0, 0, 0.7)',
+        ]
+        : [
+            'rgba(255, 255, 255, 0)',
+            'rgba(255, 255, 255, 0.05)',
+            'rgba(255, 255, 255, 0.1)',
+            'rgba(255, 255, 255, 0.2)',
+            'rgba(255, 255, 255, 0.3)',
+            'rgba(255, 255, 255, 0.5)',
+            'rgba(255, 255, 255, 0.7)',
+        ];
 
     return (
         <View style={styles.container}>
             <Image source={{uri: imageUrl}} style={styles.image} />
             <View style={styles.overlay}>
                 <View style={styles.bottomContent}>
-                    <Text style={styles.movieNameText}>{movieName}</Text>
+                    <Text semiBold style={styles.movieNameText}>{movieName}</Text>
                     <View style={styles.ratingContainer}>
-                        <Text style={styles.star}>⭐</Text>
-                        <Text style={styles.rating}>{rating.toFixed(1)}</Text>
+                        <Text semiBold style={styles.star}>⭐</Text>
+                        <Text semiBold style={styles.rating}>{rating.toFixed(1)}</Text>
                     </View>
                 </View>
+                <LinearGradient
+                    colors={gradientColors}
+                    start={{x: 0.5, y: 0}}
+                    end={{x: 0.5, y: 1}}
+                    style={styles.gradientOverlay}
+                />
             </View>
         </View>
     );
@@ -50,6 +77,7 @@ const createStyles = (theme: any) => StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 16,
+        zIndex: 1,
     },
     ratingContainer: {
         flexDirection: 'row',
@@ -61,13 +89,18 @@ const createStyles = (theme: any) => StyleSheet.create({
     },
     rating: {
         color: theme.colors.textCard,
-        fontSize: 12,
-        fontWeight: 'bold',
+        fontSize: 10,
     },
     movieNameText: {
         color: theme.colors.textCard,
-        fontWeight: 'bold',
-        fontSize: 12,
+        fontSize: 10,
+        width: '80%',
+    },
+    gradientOverlay: {
+        position: 'absolute',
+        width: '100%',
+        height: '35%', // Réduction de la hauteur du gradient (était à 30%)
+        bottom: 0,
     },
 });
 

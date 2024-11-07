@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import {useTheme} from '../../providers/theme_provider';
 import {Movie} from "../MovieList";

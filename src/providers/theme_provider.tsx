@@ -5,11 +5,11 @@ import {LightModeTheme, DarkModeTheme} from '../constants/theme';
 const ThemeContext = createContext({
     theme: DarkModeTheme,
     toggleTheme: () => {},
-    isDark: false,
+    isDark: true,
 });
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-    const [isDark, setIsDark] = useState(false); // Commence par le thème clair par défaut
+    const [isDark, setIsDark] = useState(true); // Commence par le thème clair par défaut
 
     const toggleTheme = () => {
         setIsDark(!isDark);

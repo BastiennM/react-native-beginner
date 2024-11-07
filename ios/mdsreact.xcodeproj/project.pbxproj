@@ -8,13 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* mdsreactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mdsreactTests.m */; };
+		05B44E3AC3664F0C8DD9101F /* Gilroy-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3377199FC6D54310B6FFACC8 /* Gilroy-MediumItalic.ttf */; };
+		0B041B65D55F4696B1D01C7F /* Gilroy-UltraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85364F47FC8470594921FF9 /* Gilroy-UltraLightItalic.ttf */; };
+		0DCA90A3FA334E20B1606CA4 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8546CBE1245942FFBE8478AC /* Gilroy-Bold.ttf */; };
+		0E4661DA376F426F91D24003 /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 542CBC5795BF4BAF9DB0D340 /* Gilroy-ExtraBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		171307BF87D040CEA6890B77 /* Gilroy-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3AB3F3D4646450383A7BE49 /* Gilroy-Thin.ttf */; };
+		1B74BDE20B31474D914F6B07 /* Gilroy-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 024F0DF141CB4ABE85E4BA3A /* Gilroy-BoldItalic.ttf */; };
+		1BF82ADA04DF4ABC8C392AF1 /* Gilroy-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8761CD17A2A4995ADE90800 /* Gilroy-LightItalic.ttf */; };
+		21E2472D8DFB4962B3B78791 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B94F39178D24085957BEABC /* Gilroy-Regular.ttf */; };
+		579A75030F4641EB8E6FBF25 /* Gilroy-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE55F38E86C64B7E8CBA7CEA /* Gilroy-RegularItalic.ttf */; };
+		688C377B901768A76A00742E /* libPods-mdsreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A53D97222AF68B7C2DA49D /* libPods-mdsreact.a */; };
+		6C0764429C9E4A729D6A371C /* Gilroy-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14E67B023274A6A81904EE9 /* Gilroy-SemiBoldItalic.ttf */; };
+		77B10A96488A477587662D1F /* Gilroy-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18FEB8804123455C8A07D997 /* Gilroy-HeavyItalic.ttf */; };
+		7AAA38D52ED4499F9B2D8DD2 /* Gilroy-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD3A7C199A3A47A6954BBF67 /* Gilroy-BlackItalic.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		AB56A5B82C6D2FD8EE6D0867 /* libPods-mdsreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CC07C86C882F09AD1F83D9 /* libPods-mdsreact.a */; };
-		C7A76EE9F5C93A5E1A0EB19A /* libPods-mdsreact-mdsreactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C8CEF7FDD4D26311C8B3AE /* libPods-mdsreact-mdsreactTests.a */; };
+		91E31ACC2495479786A2A2DD /* Gilroy-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12EE451899C428B99DFD4A0 /* Gilroy-UltraLight.ttf */; };
+		9C649F155180433F820745DA /* Gilroy-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA2ADDEB04664D08AA81FC25 /* Gilroy-ExtraBoldItalic.ttf */; };
+		A61503F56EF644C4A8A5C4B4 /* Gilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0116E0AE6A714B46BDD6BB30 /* Gilroy-Black.ttf */; };
+		AEF817481B4E4155A778AB3B /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE4A2113BF1464C9FF2008F /* Gilroy-Light.ttf */; };
+		CC8E391412734564B01C3D65 /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 609D57966FC44ADABC055A89 /* Gilroy-Heavy.ttf */; };
+		CCF00BC8BDA84B689D03E256 /* Gilroy-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA2F250545954648B0422E9F /* Gilroy-ThinItalic.ttf */; };
 		DB60D9BD0422A9101CBF2644 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CD3B8BD1733FE90D69B0E617 /* PrivacyInfo.xcprivacy */; };
+		E1F79B2360534383936DD5F5 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1652AB221483CBAD216DB /* Gilroy-Medium.ttf */; };
+		ED5E823B0C3F4900B40F5C4E /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49A27A4D0A3546DEAF6D62FB /* Gilroy-SemiBold.ttf */; };
+		FEB44871F74170C7F0716C2B /* libPods-mdsreact-mdsreactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F769D3CC9AB6DA1C93272D3 /* libPods-mdsreact-mdsreactTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +51,10 @@
 		00E356EE1AD99517003FC87E /* mdsreactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdsreactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* mdsreactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdsreactTests.m; sourceTree = "<group>"; };
+		0116E0AE6A714B46BDD6BB30 /* Gilroy-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Black.ttf"; path = "../assets/fonts/Gilroy-Black.ttf"; sourceTree = "<group>"; };
+		024F0DF141CB4ABE85E4BA3A /* Gilroy-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-BoldItalic.ttf"; path = "../assets/fonts/Gilroy-BoldItalic.ttf"; sourceTree = "<group>"; };
+		02A53D97222AF68B7C2DA49D /* libPods-mdsreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdsreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B94F39178D24085957BEABC /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Regular.ttf"; path = "../assets/fonts/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* mdsreact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdsreact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = mdsreact/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = mdsreact/AppDelegate.mm; sourceTree = "<group>"; };
@@ -38,14 +62,30 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = mdsreact/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mdsreact/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = mdsreact/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		15CC07C86C882F09AD1F83D9 /* libPods-mdsreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdsreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		28DA7E81C4755B7B47B01FB6 /* Pods-mdsreact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact.release.xcconfig"; path = "Target Support Files/Pods-mdsreact/Pods-mdsreact.release.xcconfig"; sourceTree = "<group>"; };
-		43C8CEF7FDD4D26311C8B3AE /* libPods-mdsreact-mdsreactTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdsreact-mdsreactTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1675244E781D9CC4A5492BB0 /* Pods-mdsreact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact.release.xcconfig"; path = "Target Support Files/Pods-mdsreact/Pods-mdsreact.release.xcconfig"; sourceTree = "<group>"; };
+		18FEB8804123455C8A07D997 /* Gilroy-HeavyItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-HeavyItalic.ttf"; path = "../assets/fonts/Gilroy-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		2F769D3CC9AB6DA1C93272D3 /* libPods-mdsreact-mdsreactTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdsreact-mdsreactTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		323973D724E19C5888FB39DC /* Pods-mdsreact-mdsreactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact-mdsreactTests.debug.xcconfig"; path = "Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3377199FC6D54310B6FFACC8 /* Gilroy-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-MediumItalic.ttf"; path = "../assets/fonts/Gilroy-MediumItalic.ttf"; sourceTree = "<group>"; };
+		3CF1652AB221483CBAD216DB /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Medium.ttf"; path = "../assets/fonts/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		49A27A4D0A3546DEAF6D62FB /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-SemiBold.ttf"; path = "../assets/fonts/Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
+		52C9BB02471632FED964BA2E /* Pods-mdsreact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact.debug.xcconfig"; path = "Target Support Files/Pods-mdsreact/Pods-mdsreact.debug.xcconfig"; sourceTree = "<group>"; };
+		542CBC5795BF4BAF9DB0D340 /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-ExtraBold.ttf"; path = "../assets/fonts/Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
+		5B474F99A2008D32B81F128A /* Pods-mdsreact-mdsreactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact-mdsreactTests.release.xcconfig"; path = "Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests.release.xcconfig"; sourceTree = "<group>"; };
+		609D57966FC44ADABC055A89 /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Heavy.ttf"; path = "../assets/fonts/Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mdsreact/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		844B3076D782059BDB936729 /* Pods-mdsreact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact.debug.xcconfig"; path = "Target Support Files/Pods-mdsreact/Pods-mdsreact.debug.xcconfig"; sourceTree = "<group>"; };
-		A9C0107F604A6E71B6021D04 /* Pods-mdsreact-mdsreactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact-mdsreactTests.debug.xcconfig"; path = "Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8546CBE1245942FFBE8478AC /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Bold.ttf"; path = "../assets/fonts/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		A3AB3F3D4646450383A7BE49 /* Gilroy-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Thin.ttf"; path = "../assets/fonts/Gilroy-Thin.ttf"; sourceTree = "<group>"; };
+		B85364F47FC8470594921FF9 /* Gilroy-UltraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-UltraLightItalic.ttf"; path = "../assets/fonts/Gilroy-UltraLightItalic.ttf"; sourceTree = "<group>"; };
+		BA2ADDEB04664D08AA81FC25 /* Gilroy-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-ExtraBoldItalic.ttf"; path = "../assets/fonts/Gilroy-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		BA2F250545954648B0422E9F /* Gilroy-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-ThinItalic.ttf"; path = "../assets/fonts/Gilroy-ThinItalic.ttf"; sourceTree = "<group>"; };
+		BE55F38E86C64B7E8CBA7CEA /* Gilroy-RegularItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-RegularItalic.ttf"; path = "../assets/fonts/Gilroy-RegularItalic.ttf"; sourceTree = "<group>"; };
+		C14E67B023274A6A81904EE9 /* Gilroy-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-SemiBoldItalic.ttf"; path = "../assets/fonts/Gilroy-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		C8761CD17A2A4995ADE90800 /* Gilroy-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-LightItalic.ttf"; path = "../assets/fonts/Gilroy-LightItalic.ttf"; sourceTree = "<group>"; };
+		CD3A7C199A3A47A6954BBF67 /* Gilroy-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-BlackItalic.ttf"; path = "../assets/fonts/Gilroy-BlackItalic.ttf"; sourceTree = "<group>"; };
 		CD3B8BD1733FE90D69B0E617 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = mdsreact/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		E7022AA8FB5EA28AD1CD2828 /* Pods-mdsreact-mdsreactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdsreact-mdsreactTests.release.xcconfig"; path = "Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests.release.xcconfig"; sourceTree = "<group>"; };
+		D12EE451899C428B99DFD4A0 /* Gilroy-UltraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-UltraLight.ttf"; path = "../assets/fonts/Gilroy-UltraLight.ttf"; sourceTree = "<group>"; };
+		DAE4A2113BF1464C9FF2008F /* Gilroy-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Light.ttf"; path = "../assets/fonts/Gilroy-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -54,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7A76EE9F5C93A5E1A0EB19A /* libPods-mdsreact-mdsreactTests.a in Frameworks */,
+				FEB44871F74170C7F0716C2B /* libPods-mdsreact-mdsreactTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB56A5B82C6D2FD8EE6D0867 /* libPods-mdsreact.a in Frameworks */,
+				688C377B901768A76A00742E /* libPods-mdsreact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +126,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0BD9A155EA7541B691A201C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0116E0AE6A714B46BDD6BB30 /* Gilroy-Black.ttf */,
+				CD3A7C199A3A47A6954BBF67 /* Gilroy-BlackItalic.ttf */,
+				8546CBE1245942FFBE8478AC /* Gilroy-Bold.ttf */,
+				024F0DF141CB4ABE85E4BA3A /* Gilroy-BoldItalic.ttf */,
+				542CBC5795BF4BAF9DB0D340 /* Gilroy-ExtraBold.ttf */,
+				BA2ADDEB04664D08AA81FC25 /* Gilroy-ExtraBoldItalic.ttf */,
+				609D57966FC44ADABC055A89 /* Gilroy-Heavy.ttf */,
+				18FEB8804123455C8A07D997 /* Gilroy-HeavyItalic.ttf */,
+				DAE4A2113BF1464C9FF2008F /* Gilroy-Light.ttf */,
+				C8761CD17A2A4995ADE90800 /* Gilroy-LightItalic.ttf */,
+				3CF1652AB221483CBAD216DB /* Gilroy-Medium.ttf */,
+				3377199FC6D54310B6FFACC8 /* Gilroy-MediumItalic.ttf */,
+				0B94F39178D24085957BEABC /* Gilroy-Regular.ttf */,
+				BE55F38E86C64B7E8CBA7CEA /* Gilroy-RegularItalic.ttf */,
+				49A27A4D0A3546DEAF6D62FB /* Gilroy-SemiBold.ttf */,
+				C14E67B023274A6A81904EE9 /* Gilroy-SemiBoldItalic.ttf */,
+				A3AB3F3D4646450383A7BE49 /* Gilroy-Thin.ttf */,
+				BA2F250545954648B0422E9F /* Gilroy-ThinItalic.ttf */,
+				D12EE451899C428B99DFD4A0 /* Gilroy-UltraLight.ttf */,
+				B85364F47FC8470594921FF9 /* Gilroy-UltraLightItalic.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* mdsreact */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				15CC07C86C882F09AD1F83D9 /* libPods-mdsreact.a */,
-				43C8CEF7FDD4D26311C8B3AE /* libPods-mdsreact-mdsreactTests.a */,
+				02A53D97222AF68B7C2DA49D /* libPods-mdsreact.a */,
+				2F769D3CC9AB6DA1C93272D3 /* libPods-mdsreact-mdsreactTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +195,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				0BD9A155EA7541B691A201C0 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -145,10 +214,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				844B3076D782059BDB936729 /* Pods-mdsreact.debug.xcconfig */,
-				28DA7E81C4755B7B47B01FB6 /* Pods-mdsreact.release.xcconfig */,
-				A9C0107F604A6E71B6021D04 /* Pods-mdsreact-mdsreactTests.debug.xcconfig */,
-				E7022AA8FB5EA28AD1CD2828 /* Pods-mdsreact-mdsreactTests.release.xcconfig */,
+				52C9BB02471632FED964BA2E /* Pods-mdsreact.debug.xcconfig */,
+				1675244E781D9CC4A5492BB0 /* Pods-mdsreact.release.xcconfig */,
+				323973D724E19C5888FB39DC /* Pods-mdsreact-mdsreactTests.debug.xcconfig */,
+				5B474F99A2008D32B81F128A /* Pods-mdsreact-mdsreactTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -160,12 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "mdsreactTests" */;
 			buildPhases = (
-				06BC4D3821B62EB09B3B91A8 /* [CP] Check Pods Manifest.lock */,
+				5845F171BB91DDD6BDE91F2B /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				16B352C9DDBA59F6E20BAD22 /* [CP] Embed Pods Frameworks */,
-				28E899BB5A38DE575150E285 /* [CP] Copy Pods Resources */,
+				C23BA19D2DFE73EF688D0366 /* [CP] Embed Pods Frameworks */,
+				7ACD668E1F78EAEF3DB1BA48 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,13 +250,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "mdsreact" */;
 			buildPhases = (
-				C431886ABC5EB9E6183433F6 /* [CP] Check Pods Manifest.lock */,
+				5096518FFDBA7D731DF77AAC /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				45FEB458A38C8857664C5C21 /* [CP] Embed Pods Frameworks */,
-				359761BCDE479EA6CDC79492 /* [CP] Copy Pods Resources */,
+				CAAAA05BCF5FC1A67112A7D1 /* [CP] Embed Pods Frameworks */,
+				37DEEFC4C25F945BFD1D60DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +318,26 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				DB60D9BD0422A9101CBF2644 /* PrivacyInfo.xcprivacy in Resources */,
+				A61503F56EF644C4A8A5C4B4 /* Gilroy-Black.ttf in Resources */,
+				7AAA38D52ED4499F9B2D8DD2 /* Gilroy-BlackItalic.ttf in Resources */,
+				0DCA90A3FA334E20B1606CA4 /* Gilroy-Bold.ttf in Resources */,
+				1B74BDE20B31474D914F6B07 /* Gilroy-BoldItalic.ttf in Resources */,
+				0E4661DA376F426F91D24003 /* Gilroy-ExtraBold.ttf in Resources */,
+				9C649F155180433F820745DA /* Gilroy-ExtraBoldItalic.ttf in Resources */,
+				CC8E391412734564B01C3D65 /* Gilroy-Heavy.ttf in Resources */,
+				77B10A96488A477587662D1F /* Gilroy-HeavyItalic.ttf in Resources */,
+				AEF817481B4E4155A778AB3B /* Gilroy-Light.ttf in Resources */,
+				1BF82ADA04DF4ABC8C392AF1 /* Gilroy-LightItalic.ttf in Resources */,
+				E1F79B2360534383936DD5F5 /* Gilroy-Medium.ttf in Resources */,
+				05B44E3AC3664F0C8DD9101F /* Gilroy-MediumItalic.ttf in Resources */,
+				21E2472D8DFB4962B3B78791 /* Gilroy-Regular.ttf in Resources */,
+				579A75030F4641EB8E6FBF25 /* Gilroy-RegularItalic.ttf in Resources */,
+				ED5E823B0C3F4900B40F5C4E /* Gilroy-SemiBold.ttf in Resources */,
+				6C0764429C9E4A729D6A371C /* Gilroy-SemiBoldItalic.ttf in Resources */,
+				171307BF87D040CEA6890B77 /* Gilroy-Thin.ttf in Resources */,
+				CCF00BC8BDA84B689D03E256 /* Gilroy-ThinItalic.ttf in Resources */,
+				91E31ACC2495479786A2A2DD /* Gilroy-UltraLight.ttf in Resources */,
+				0B041B65D55F4696B1D01C7F /* Gilroy-UltraLightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +360,46 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		06BC4D3821B62EB09B3B91A8 /* [CP] Check Pods Manifest.lock */ = {
+		37DEEFC4C25F945BFD1D60DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mdsreact/Pods-mdsreact-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mdsreact/Pods-mdsreact-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdsreact/Pods-mdsreact-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5096518FFDBA7D731DF77AAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mdsreact-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5845F171BB91DDD6BDE91F2B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,24 +421,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		16B352C9DDBA59F6E20BAD22 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28E899BB5A38DE575150E285 /* [CP] Copy Pods Resources */ = {
+		7ACD668E1F78EAEF3DB1BA48 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,24 +438,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		359761BCDE479EA6CDC79492 /* [CP] Copy Pods Resources */ = {
+		C23BA19D2DFE73EF688D0366 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdsreact/Pods-mdsreact-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdsreact/Pods-mdsreact-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdsreact/Pods-mdsreact-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdsreact-mdsreactTests/Pods-mdsreact-mdsreactTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		45FEB458A38C8857664C5C21 /* [CP] Embed Pods Frameworks */ = {
+		CAAAA05BCF5FC1A67112A7D1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,28 +470,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdsreact/Pods-mdsreact-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C431886ABC5EB9E6183433F6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mdsreact-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -416,7 +505,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9C0107F604A6E71B6021D04 /* Pods-mdsreact-mdsreactTests.debug.xcconfig */;
+			baseConfigurationReference = 323973D724E19C5888FB39DC /* Pods-mdsreact-mdsreactTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -443,7 +532,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7022AA8FB5EA28AD1CD2828 /* Pods-mdsreact-mdsreactTests.release.xcconfig */;
+			baseConfigurationReference = 5B474F99A2008D32B81F128A /* Pods-mdsreact-mdsreactTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -467,7 +556,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 844B3076D782059BDB936729 /* Pods-mdsreact.debug.xcconfig */;
+			baseConfigurationReference = 52C9BB02471632FED964BA2E /* Pods-mdsreact.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -495,7 +584,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28DA7E81C4755B7B47B01FB6 /* Pods-mdsreact.release.xcconfig */;
+			baseConfigurationReference = 1675244E781D9CC4A5492BB0 /* Pods-mdsreact.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;

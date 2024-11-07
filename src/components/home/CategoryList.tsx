@@ -2,13 +2,13 @@ import React from 'react';
 import {
     ScrollView,
     TouchableOpacity,
-    Text,
     StyleSheet,
     View,
 } from 'react-native';
 import {Category} from "../../data/api";
 import {useTheme} from "../../providers/theme_provider";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Text from "../Text";
 
 interface CategoryListProps {
     selectedCategory: Category;
@@ -48,7 +48,7 @@ const CategoryList: React.FC<CategoryListProps> = ({
                                 styles.categoryButton,
                                 selectedCategory === category.id && styles.selectedButton,
                             ]}>
-                            <Text
+                            <Text medium
                                 style={[
                                     styles.categoryText,
                                     selectedCategory === category.id && styles.selectedText,

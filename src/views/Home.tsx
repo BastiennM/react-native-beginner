@@ -7,10 +7,12 @@ import MovieList, {Movie, TypeList} from '../components/MovieList';
 import CarouselPagination from '../components/home/CarouselPagination';
 import {Category, fetchBestMovies, fetchBestMoviesByGenre, fetchMarvelMovies, fetchMoviesByGenre} from '../data/api';
 import CategoryList from "../components/home/CategoryList";
+import BlackFriday from "../components/home/BlackFriday";
 
 function Home() {
     const {theme} = useTheme();
     const style = createStyle(theme);
+
     const [currentPage, setCurrentPage] = useState(0);
     const [marvelAllMovies, setMarvelAllMovies] = useState<Movie[]>([]);
     const [popularAllMovies, setPopularAllMovies] = useState<Movie[]>([]);
@@ -58,6 +60,7 @@ function Home() {
                         <MovieList movies={selectedCategory === Category.ALL ? marvelAllMovies : moviesByGenre} headerLabel={'Marvel Studio'} type={TypeList.ByGenre}/>
                         <MovieList movies={selectedCategory === Category.ALL ? popularAllMovies : bestMoviesByGenre} headerLabel={'Best Movies'} type={TypeList.Best}/>
                     </View>
+                    <BlackFriday/>
                 </View>
             </ScrollView>
         </View>

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Image, StyleSheet, Dimensions, ScrollView, NativeSyntheticEvent, NativeScrollEvent} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useTheme} from '../../providers/theme_provider';
-import {Movie} from "../MovieList";
+import {Movie} from '../MovieList';
 
 interface CarouselHomeProps {
     onPageChange: (page: number) => void;
@@ -22,9 +22,21 @@ const CarouselHome: React.FC<CarouselHomeProps> = ({ onPageChange, carouselImage
     };
 
     const gradientColors = isDark
-        ? ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.8)', 'black']
+        ? [
+            'rgba(0, 0, 0, 0)',
+            'rgba(0, 0, 0, 0.05)',
+            'rgba(0, 0, 0, 0.1)',
+            'rgba(0, 0, 0, 0.2)',
+            'rgba(0, 0, 0, 0.3)',
+            'rgba(0, 0, 0, 0.5)',
+            'rgba(0, 0, 0, 0.8)',
+            'black']
         : [
             'rgba(255, 255, 255, 0)',
+            'rgba(255, 255, 255, 0.05)',
+            'rgba(255, 255, 255, 0.1)',
+            'rgba(255, 255, 255, 0.2)',
+            'rgba(255, 255, 255, 0.3)',
             'rgba(255, 255, 255, 0.5)',
             'rgba(255, 255, 255, 0.8)',
             'white',

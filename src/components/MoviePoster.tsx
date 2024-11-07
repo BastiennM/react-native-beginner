@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {View, Image, StyleSheet, Dimensions} from 'react-native';
 import {useTheme} from '../providers/theme_provider';
+import Text from './Text';
 
 interface MoviePosterProps {
     imageUrl: string;
@@ -19,7 +20,7 @@ const MoviePoster: React.FC<MoviePosterProps> = ({imageUrl, title}) => {
                     resizeMode="cover"
                 />
             </View>
-            <Text
+            <Text semiBold
                 style={[
                     styles.title,
                     {color: theme.colors.text},
@@ -47,8 +48,7 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     title: {
-        fontSize: 16,
-        fontWeight: '500',
+        fontSize: 14,
         textAlign: 'left',
     },
 });

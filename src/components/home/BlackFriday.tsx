@@ -10,7 +10,7 @@ const BlackFriday = () => {
     return (
         <View style={styles.container}>
             <Image
-                source={require('../../../assets/images/png/black_friday.png')}
+                source={{uri: 'https://s4844.pcdn.co/wp-content/uploads/2020/11/ashkan-forouzani-sUlR4Iul-9c-unsplash-scaled.jpg'}}
                 style={styles.image}
                 resizeMode="cover"
             />

@@ -1,74 +1,115 @@
-// In App.js in a new project
-
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from './src/views/Home.tsx';
-import SearchScreen from './src/views/Search.tsx';
-import WishlistScreen from './src/views/Wishlist.tsx';
-import ProfileScreen from './src/views/Profile.tsx';
-import {BookmarkIcon, BookmarkDarkIcon, BookmarkFillIcon, HomeIcon, HomeDarkIcon, HomeFillIcon, ProfileIcon, ProfileDarkIcon, ProfileFillIcon, SearchIcon, SearchDarkIcon, SearchFillIcon} from './assets/icons';
-import {ThemeProvider, useTheme} from './src/providers/theme_provider';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider, useTheme } from './src/providers/theme_provider';
+
+// Screens
+import HomeScreen from './src/views/Home';
+import SearchScreen from './src/views/Search';
+import WishlistScreen from './src/views/Wishlist';
+import ProfileScreen from './src/views/Profile';
+
+// Icons
+import {
+    BookmarkIcon, BookmarkDarkIcon, BookmarkFillIcon,
+    HomeIcon, HomeDarkIcon, HomeFillIcon,
+    ProfileIcon, ProfileDarkIcon, ProfileFillIcon,
+    SearchIcon, SearchDarkIcon, SearchFillIcon
+} from './assets/icons';
 
 const Tab = createBottomTabNavigator();
 
-const Body = () => {
+// Configuration des onglets de navigation
+const getTabScreenOptions = (theme: any, isDark: boolean) => ({
+    tabBarStyle: {
+        backgroundColor: theme.colors.background,
+        borderTopColor: theme.colors.border,
+    },
+    tabBarActiveTintColor: theme.colors.primary,
+    tabBarInactiveTintColor: theme.colors.text,
+    headerShown: false,
+});
+
+// Configuration des icônes pour chaque onglet
+const getTabIcon = (focused: boolean, isDark: boolean, icons: { 
+    default: React.ComponentType, 
+    dark: React.ComponentType, 
+    filled: React.ComponentType 
+}) => {
+    if (focused) return <icons.filled />;
+    return isDark ? <icons.dark /> : <icons.default />;
+};
+
+// Configuration des écrans
+const TAB_SCREENS = [
+    {
+        name: 'Home',
+        component: HomeScreen,
+        icons: {
+            default: HomeIcon,
+            dark: HomeDarkIcon,
+            filled: HomeFillIcon
+        }
+    },
+    {
+        name: 'Search',
+        component: SearchScreen,
+        icons: {
+            default: SearchIcon,
+            dark: SearchDarkIcon,
+            filled: SearchFillIcon
+        }
+    },
+    {
+        name: 'Wishlist',
+        component: WishlistScreen,
+        icons: {
+            default: BookmarkIcon,
+            dark: BookmarkDarkIcon,
+            filled: BookmarkFillIcon
+        }
+    },
+    {
+        name: 'Profile',
+        component: ProfileScreen,
+        icons: {
+            default: ProfileIcon,
+            dark: ProfileDarkIcon,
+            filled: ProfileFillIcon
+        }
+    }
+];
+
+const TabNavigator = () => {
     const { theme, isDark } = useTheme();
 
     return (
-            <Tab.Navigator screenOptions={{
-                tabBarStyle: {
-                    backgroundColor: theme.colors.background,
-                    borderTopColor: theme.colors.border,
-                },
-                tabBarActiveTintColor: theme.colors.primary,
-                tabBarInactiveTintColor: theme.colors.text,
-            }}>
-                <Tab.Screen name="Home" component={HomeScreen} options={
-                    {
-                        tabBarIcon: ({focused}) => (
-                            focused ? <HomeFillIcon /> : !isDark ? <HomeIcon /> : <HomeDarkIcon />
-                        ),
-                        headerShown: false,
-                    }
-                }/>
-                <Tab.Screen name="Search" component={SearchScreen} options={
-                    {
-                        tabBarIcon: ({focused}) => (
-                            focused ? <SearchFillIcon /> : !isDark ? <SearchIcon /> : <SearchDarkIcon />
-                        ),
-                        headerShown: false,
-                    }
-                }/>
-                <Tab.Screen name="Wishlist" component={WishlistScreen} options={
-                    {
-                        tabBarIcon: ({focused}) => (
-                            focused ? <BookmarkFillIcon /> : !isDark ? <BookmarkIcon /> : <BookmarkDarkIcon />
-                        ),
-                        headerShown: false,
-                    }
-                }/>
-                <Tab.Screen name="Profile" component={ProfileScreen} options={
-                    {
-                        tabBarIcon: ({focused}) => (
-                            focused ? <ProfileFillIcon /> : !isDark ? <ProfileIcon /> : <ProfileDarkIcon />
-                        ),
-                        headerShown: false,
-                    }
-                }/>
-            </Tab.Navigator>
+        <Tab.Navigator screenOptions={getTabScreenOptions(theme, isDark)}>
+            {TAB_SCREENS.map(screen => (
+                <Tab.Screen
+                    key={screen.name}
+                    name={screen.name}
+                    component={screen.component}
+                    options={{
+                        tabBarIcon: ({focused}) => getTabIcon(focused, isDark, screen.icons)
+                    }}
+                />
+            ))}
+        </Tab.Navigator>
     );
 };
 
-export default function App() {
+const App = () => {
     return (
         <SafeAreaProvider>
             <ThemeProvider>
                 <NavigationContainer>
-                    <Body />
+                    <TabNavigator />
                 </NavigationContainer>
             </ThemeProvider>
         </SafeAreaProvider>
     );
-}
+};
+
+export default App;

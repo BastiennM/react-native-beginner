@@ -1,3 +1,6 @@
+# Projet Etudiant
+
+Projet dans le cadre du cours de développement mobile à MyDigitalSchool.
 ## Prérequis
 
 Ce projet utilise `nvm` (Node Version Manager) pour gérer les versions de Node.js. Assurez-vous d'avoir `nvm` installé sur votre machine avant de continuer.

@@ -21,6 +21,12 @@ function Home() {
     const [moviesByGenre, setMoviesByGenre] = useState<Movie[]>([]);
     const [bestMoviesByGenre, setBestMoviesByGenre] = useState<Movie[]>([]);
 
+    // Nouvelle fonction pour gérer le changement de catégorie
+    const handleCategoryChange = (category: Category) => {
+        setSelectedCategory(category);
+        setCurrentPage(0); // Réinitialise l'index de pagination
+    };
+
     useEffect(() => {
         const loadMovies = async () => {
             try {
@@ -49,7 +55,7 @@ function Home() {
                 <CarouselHome onPageChange={setCurrentPage} carouselImages={carouselImages}/>
                 <CategoryList
                     selectedCategory={selectedCategory}
-                    onCategoryPress={setSelectedCategory}
+                    onCategoryPress={handleCategoryChange}
                 />
                 <View>
                     <View style={style.topPageContainer}>

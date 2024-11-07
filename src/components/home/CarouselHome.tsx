@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {View, Image, StyleSheet, Dimensions, ScrollView, NativeSyntheticEvent, NativeScrollEvent} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useTheme} from '../../providers/theme_provider';
@@ -7,12 +7,27 @@ import {Movie} from '../MovieList';
 interface CarouselHomeProps {
     onPageChange: (page: number) => void;
     carouselImages: Movie[];
+    currentPage: number;
 }
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 const CarouselHome: React.FC<CarouselHomeProps> = ({ onPageChange, carouselImages }) => {    const {isDark, theme} = useTheme();
     const styles = createStyle(theme);
+    const scrollViewRef = useRef<ScrollView>(null);
+
+    // Effet pour forcer le scroll à la page 0 quand les images changent
+    useEffect(() => {
+        if (scrollViewRef.current) {
+            // Force le scroll à 0 avec animation
+            scrollViewRef.current.scrollTo({
+                x: 0,
+                animated: true,
+            });
+            // Force la mise à jour de l'index
+            onPageChange(0);
+        }
+    }, [carouselImages, onPageChange]); // Ajout de onPageChange aux dépendances
 
     const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         const contentOffset = event.nativeEvent.contentOffset;
@@ -50,6 +65,7 @@ const CarouselHome: React.FC<CarouselHomeProps> = ({ onPageChange, carouselImage
                 showsHorizontalScrollIndicator={false}
                 onScroll={handleScroll}
                 scrollEventThrottle={16}
+                ref={scrollViewRef}
             >
                 {carouselImages.map((movie, index) => (
                     <View key={index} style={styles.slideContainer}>

@@ -19,7 +19,7 @@ nvm use
 ```
 
 ## Clé API
-Placer la clé API dans un fichier `.env` à la racine du projet (se référer au fichier `.env.example` pour le format).
+Placer la clé API de TMDB (https://www.themoviedb.org) dans un fichier `.env` à la racine du projet (se référer au fichier `.env.example` pour le format).
 
 ## Auto-notation
 Je me donne 16/20
